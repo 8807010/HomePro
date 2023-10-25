@@ -257,6 +257,13 @@ h6 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
+@media (max-width: 47.99875em) {
+  .header__container {
+    min-height: 3.4375rem;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+  }
+}
 .header__logo {
   position: relative;
   z-index: 5;
@@ -279,40 +286,47 @@ h6 {
   content: "";
   border-radius: 50%;
 }
+@media (max-width: 47.99875em) {
+  .header__schedule {
+    justify-content: flex-end;
+  }
+}
 
 .menu {
   justify-self: center;
 }
-.menu__body {
-  padding: 6.25rem 0.9375rem 1.5625rem 0.9375rem;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  row-gap: 2.5rem;
-  top: 0;
-  left: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  background-color: #1f3584;
-  transition: left 0.5s;
-}
-.menu__body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 3.4375rem;
-  top: 0;
-  left: 100%;
-  z-index: 2;
-  transition: left 0.5s;
-  background-color: #142257;
-}
-.menu-open .menu__body {
-  left: 0;
-}
-.menu-open .menu__body::before {
-  left: 0;
+@media (max-width: 47.99875em) {
+  .menu__body {
+    padding: 6.25rem 0.9375rem 1.5625rem 0.9375rem;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    row-gap: 2.5rem;
+    top: 0;
+    left: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #1f3584;
+    transition: left 0.5s;
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 3.4375rem;
+    top: 0;
+    left: 100%;
+    z-index: 2;
+    transition: left 0.5s;
+    background-color: #142257;
+  }
+  .menu-open .menu__body {
+    left: 0;
+  }
+  .menu-open .menu__body::before {
+    left: 0;
+  }
 }
 .menu__list {
   display: flex;
@@ -339,6 +353,15 @@ h6 {
 @media (max-width: 48em) {
   .menu__list {
     column-gap: 0.9375rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu__list {
+    flex: 1 1 auto;
+    font-size: 1.75rem;
+    align-items: flex-end;
+    flex-direction: column;
+    row-gap: 1.75rem;
   }
 }
 .menu__link {
