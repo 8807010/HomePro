@@ -52,3 +52,20 @@
 </div>
 */
 //========================================================================================================================================================
+
+//========================================================================================================================================================
+.done {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: toRem(40);
+  row-gap: toRem(8);
+
+  // .done__item
+  &__item {
+    color: $bgColorLite;
+    padding-left: toRem(32);
+    @include adaptiveValue("font-size", 20, 18);
+    line-height: 1.3;
+    background: url("@img/icons/check-blue.svg") left toRem(1) no-repeat;
+  }
+}
