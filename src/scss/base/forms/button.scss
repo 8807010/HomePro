@@ -15,15 +15,25 @@
   transition: all 0.3s;
   line-height: 133.333333%;
 
+  /* 32/24 */
   @media (any-hover: hover) {
     &:hover {
       background-color: $bgColorSemi;
     }
   }
 
-  &--min {}
+  &--min {
+    font-size: toRem(18);
+    line-height: 150%;
+    /* 24/18 */
+    padding: toRem(12) toRem(36);
+    min-height: 0;
+  }
 
-  &--white {}
+  &--white {
+    background-color: #fff;
+    color: $bgColorLite;
+  }
 
   &--icon {
     span {

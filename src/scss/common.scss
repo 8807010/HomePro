@@ -12,6 +12,10 @@
     grid-template-columns: minmax(auto, toRem(586)) minmax(auto, toRem(613));
     justify-content: space-between;
     align-items: end;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: auto;
+    }
   }
 
   // .block-header__title
@@ -32,14 +36,24 @@
     }
   }
 
-  // .block-header__text
-  &__text {
-    p {
-      line-height: 1.55;
-      font-weight: 700;
+  p {
+    line-height: 1.55;
+  }
+
+  a {
+    font-weight: 700;
+    color: $bgColorLite;
+    text-decoration: underline;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
+
+
 
 /*
 <div class="block-header">
@@ -52,6 +66,15 @@
 </div>
 */
 //========================================================================================================================================================
+.text {
+  line-height: 155.555556%;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+}
 
 //========================================================================================================================================================
 .done {
