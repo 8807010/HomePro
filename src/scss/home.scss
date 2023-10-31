@@ -577,4 +577,94 @@
   }
 }
 
+//========================================================================================================================================================
+.how {
+  @include adaptiveValue("padding-top", 155, 40);
+  @include adaptiveValue("padding-bottom", 155, 20);
+
+  // .how__container
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: auto;
+      gap: toRem(30);
+    }
+  }
+
+  // .how__image
+  &__image {
+    img {
+      transform: translate(-10.599721%, 0);
+      max-width: 100%;
+    }
+
+    @media (max-width: $tablet) {
+      order: 2;
+      text-align: center;
+
+      img {
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+
+  // .how__content
+  &__content {
+    @media (max-width: $tablet) {
+      order: 1;
+    }
+  }
+
+  // .how__block-header
+  &__block-header {
+    max-width: toRem(400);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+
+  // .how__list
+  &__list {}
+}
+
+.list-how {
+  display: grid;
+  @include adaptiveValue("gap", 50, 20);
+  @extend %listCounter;
+
+  // .list-how__item
+  &__item {
+    @include adaptiveValue("padding-left", 70, 40);
+    display: grid;
+    grid-template-columns: toRem(170) auto;
+    gap: toRem(35);
+
+    &::before {
+      @include adaptiveValue("font-size", 52, 30);
+      line-height: 120%;
+      font-weight: 700;
+      color: $greyColor;
+    }
+
+    @media (max-width: em(520)) {
+      gap: toRem(5);
+      grid-template-columns: auto;
+    }
+  }
+
+  // .list-how__title
+  &__title {
+    color: $darkColor;
+    @include adaptiveValue("font-size", 24, 18);
+    font-weight: 700;
+    line-height: 133.333333%;
+  }
+
+  // .list-how__text
+  &__text {}
+}
+
 //====================================================================================================
