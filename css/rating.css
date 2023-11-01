@@ -1,5 +1,4 @@
-// <RATING>
-// Сніппет (HTML): rating
+@charset "UTF-8";
 .rating {
   display: flex;
   align-items: flex-end;
