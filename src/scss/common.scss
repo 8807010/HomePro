@@ -24,6 +24,15 @@
     @include adaptiveValue("font-size", 52, 32);
     font-weight: 700;
     line-height: 1.23;
+    transform: translate(0, 15%);
+    opacity: 0;
+    transition: transform 0.5s 0.5s,
+      opacity 0.5s 0.5s;
+
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
 
     // .block-header__title--big
     &--big {
@@ -34,16 +43,6 @@
     &--white {
       color: #fff;
     }
-
-    transform: translate(0, 15%);
-    opacity: 0;
-    transition: transform 0.5s,
-    opacity 0.5s;
-
-    ._watcher-view & {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
   }
 
   // .block-header__text
@@ -51,8 +50,8 @@
     transform: translate(0, 15%);
     opacity: 0;
     transition:
-      transform 0.5s 0.3s,
-      opacity 0.5s 0.3s;
+      transform 0.5s 0.8s,
+      opacity 0.5s 0.8s;
 
     ._watcher-view & {
       transform: translate(0, 0);

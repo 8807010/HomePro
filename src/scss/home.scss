@@ -1,5 +1,4 @@
 //====================================================================================================
-//====================================================================================================
 .hero {
   background-color: $bgColor;
   padding: toRem(80) toRem(15) toRem(60) toRem(15);
@@ -24,6 +23,13 @@
     @include adaptiveValue("width", 412, 200, 0, $containerWidth, 991.98);
     border-radius: toRem(24);
     overflow: hidden;
+    opacity: 0;
+
+    ._watcher-view & {
+      transition: all .7s ease .5s;
+      transform: translate(0, 0);
+      opacity: 1;
+    }
 
     img {
       object-position: top;
@@ -45,9 +51,15 @@
     }
 
     &--right {
+      transform: translate(100%, 0);
+
       &::after {
         background-image: linear-gradient(35deg, #131f4b 4.15%, rgba(19, 31, 75, 0) 43.25%);
       }
+    }
+
+    &--left {
+      transform: translate(-100%, 0);
     }
   }
 
@@ -754,7 +766,7 @@
       transition: all 0.3s;
       flex: 0 0 toRem(12);
       height: toRem(12);
-      border-radius: toRem(24);
+      border-radius: toRem(10);
       background-color: #e3e6f0;
       cursor: pointer;
     }
@@ -1162,5 +1174,3 @@
     }
   }
 }
-
-//====================================================================================================
