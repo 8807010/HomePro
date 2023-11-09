@@ -7,14 +7,14 @@ import { path } from "./config/gulp-settings.js";
 
 // Передаємо значення у глобальну змінну
 global.app = {
-	isBuild: process.argv.includes('--build'),
-	isDev: !process.argv.includes('--build'),
-	isWebP: !process.argv.includes('--nowebp'),
-	isImgOpt: !process.argv.includes('--noimgopt'),
-	isFontsReW: process.argv.includes('--rewrite'),
-	gulp: gulp,
-	path: path,
-	plugins: plugins
+  isBuild: process.argv.includes('--build'),
+  isDev: !process.argv.includes('--build'),
+  isWebP: !process.argv.includes('--nowebp'),
+  isImgOpt: !process.argv.includes('--noimgopt'),
+  isFontsReW: process.argv.includes('--rewrite'),
+  gulp: gulp,
+  path: path,
+  plugins: plugins
 }
 
 // Імпорт завдань
@@ -64,7 +64,13 @@ export { deployZIP }
 gulp.task('default', development);
 
 
-
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy({
+      remoteUrl: "https://github.com/8807010/HomePro.github.io.git",
+      branch: "gh-pages"
+    }))
+});
 
 
 
