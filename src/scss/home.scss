@@ -1192,7 +1192,7 @@
       grid-template-columns: repeat(2, 1fr);
       @include adaptiveValue("gap", 100, 30);
 
-      img {
+      & * {
         grid-column: 2 / 3;
         justify-self: end;
       }
