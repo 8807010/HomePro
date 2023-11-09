@@ -2904,7 +2904,7 @@ textarea.input {
   }
 }
 @media (min-width: 61.99875em) {
-  .talk__image img {
+  .talk__image * {
     grid-column: 2/3;
     justify-self: end;
   }
