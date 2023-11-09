@@ -20,8 +20,8 @@
                 <li class="items-hero__item">Repairs</li>
                 <li class="items-hero__item">Improvements</li>
               </ul>
-              <div data-watch class="hero__block-header block-header block-header--center">
-                <h1 class="block-header__title block-header__title--white block-header__title--big">
+              <div class="hero__block-header block-header block-header--center">
+                <h1 data-watch class="block-header__title block-header__title--white block-header__title--big">
                   Need improvement or repair your home? we can help!
                 </h1>
               </div>
@@ -30,7 +30,7 @@
                 <li class="done__item">100% Commitment-Free</li>
               </ul>
             </div>
-            <a href="#" class="hero__button button button--icon">
+            <a href="tel:8886175894" class="hero__button button button--icon">
               <span>Call Us Now</span>
             </a>
           </div>
@@ -185,7 +185,8 @@
               <div class="item-service__text">
                 <p>You can tell us what you need and we can help! </p>
               </div>
-              <a href="#" class="item-service__button button button--fw button--white button--min">Call Us Now</a>
+              <a href="tel:8886175894" class="item-service__button button button--fw button--white button--min">Call Us
+                Now</a>
             </article>
           </div>
         </div>
@@ -436,7 +437,7 @@
               <p>Find lots of insights and information on our blog. Explore, learn, and get inspired today.</p>
             </div>
           </div>
-          <div class="blog__items"></div>
+          <div data-watch data-watch-once class="blog__items"></div>
           <button hidden class="blog__view-more" type="button">View More</button>
         </div>
       </section>
@@ -498,12 +499,12 @@
               <li class="done__item">Free Quotes</li>
               <li class="done__item">100% Commitment-Free</li>
             </ul>
-            <a href="#" class="hero__button button button--icon">
+            <a href="tel:8886175894" class="hero__button button button--icon">
               <span>Call Us Now</span>
             </a>
           </div>
         </div>
-        <div class="talk__image">
+        <div data-watch class="talk__image">
           <img src="@img/talk/image.png" alt="Image">
         </div>
       </section>
@@ -511,6 +512,7 @@
     </main>
     @@include('html/_footer.htm',{})
   </div>
+  @@include('html/_preloader.htm',{})
   @@include('html/_js.htm',{})
 </body>
 

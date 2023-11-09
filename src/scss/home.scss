@@ -8,6 +8,7 @@
 
   @media (min-width: $tablet) {
     grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr auto;
   }
 
   @media (max-width: $tablet) {
@@ -26,7 +27,7 @@
     opacity: 0;
 
     ._watcher-view & {
-      transition: all .7s ease .5s;
+      transition: all .7s ease 1s;
       transform: translate(0, 0);
       opacity: 1;
     }
@@ -39,7 +40,7 @@
       display: none;
     }
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       width: 100%;
@@ -53,7 +54,7 @@
     &--right {
       transform: translate(100%, 0);
 
-      &::after {
+      &::before {
         background-image: linear-gradient(35deg, #131f4b 4.15%, rgba(19, 31, 75, 0) 43.25%);
       }
     }
@@ -94,6 +95,17 @@
   // .hero__block-header
   &__block-header {
     max-width: toRem(670);
+
+    transform: translate(0, 15%);
+    opacity: 0;
+
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: transform 0.5s 1.5s,
+        opacity 0.5s 1.5s;
+    }
+
 
     .block-header__title {}
   }
@@ -206,46 +218,21 @@
 
   // .decor-hero__item
   &__item {
-    @include adaptiveValue("width", 420, 200, 0, $containerWidth, 991.98);
+    @include adaptiveValue("width", 485, 200, 0, $containerWidth, 991.98);
     position: absolute;
     bottom: 0;
-    height: toRem(50);
+    height: toRem(45);
     background-color: #fff;
 
     &:first-child {
-      left: 0;
-      border-radius: 0 toRem(10) 0 0;
-
-      &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        transform: translate(calc(100% - toRem(6)), toRem(0.5));
-        border-top: toRem(50) solid transparent;
-        border-left: toRem(70) solid #fff;
-        border-bottom: 0px solid transparent;
-      }
+      left: -1px;
+      background: url("@img/hero/decoration-right.png") left / auto 100% no-repeat;
+      transform: rotateY(-180deg);
     }
 
     &:last-child {
-      right: 0;
-      border-radius: toRem(10) 0 0 0;
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        transform: translate(calc(-100% + toRem(6)), toRem(0.5));
-        border-top: toRem(50) solid transparent;
-        border-right: toRem(70) solid #fff;
-        border-bottom: 0px solid transparent;
-      }
+      right: -1px;
+      background: url("@img/hero/decoration-right.png") left / auto 100% no-repeat;
     }
   }
 
@@ -730,6 +717,14 @@
     height: toRem(48);
     border-radius: 50%;
     background: $bgColorLite url("@img/icons/arrow.svg") center no-repeat;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $bgColorSemi;
+      }
+    }
 
     // .reviews__arrow--left
     &--left {
@@ -769,6 +764,13 @@
       border-radius: toRem(10);
       background-color: #e3e6f0;
       cursor: pointer;
+      transition: background-color .3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $bgColorSemi;
+        }
+      }
     }
 
     .swiper-pagination-bullet-active {
@@ -878,6 +880,17 @@
     display: grid;
     gap: toRem(48);
     grid-template-columns: repeat(auto-fill, minmax(toRem(400), 1fr));
+
+    transform: translate(0, 15%);
+    opacity: 0;
+    transition:
+      transform 0.5s 0.8s,
+      opacity 0.5s 0.8s;
+
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
 
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 56, 20);
@@ -1154,6 +1167,18 @@
 
   // .talk__image
   &__image {
+
+    transform: translate(15%, 0);
+    opacity: 0;
+    transition:
+      transform 0.5s 0.8s,
+      opacity 0.5s 0.8s;
+
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
     img {
       max-width: 100%;
     }
