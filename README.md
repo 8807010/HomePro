@@ -14,5 +14,6 @@
 ✅ Мобильное меню  
 ✅ Подгрузка данных с JSON  
 ✅ Кастомные анимации  
+✅ Прелоадер  
 
 [![HomePro](https://github.com/8807010/HomePro/blob/master/preview.jpg)](https://8807010.github.io/HomePro/)
